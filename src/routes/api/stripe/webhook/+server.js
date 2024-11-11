@@ -1,4 +1,3 @@
-import { error } from '@sveltejs/kit';
 import Stripe from 'stripe';
 import client from '$lib/server/db.js';
 import { STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET } from '$env/static/private';
@@ -9,7 +8,7 @@ const adminGoogleId = '100935988500638449773';
 
 const stripe = new Stripe(STRIPE_SECRET_KEY);
 
-export async function POST({ request, locals }) {
+export async function POST({ request }) {
 	const event = await stripe.webhooks.constructEvent(
 		await request.text(),
 		request.headers.get('stripe-signature'),
