@@ -34,7 +34,7 @@ async function deleteIfExpired(userId) {
 
 		const updateDoc = {
 			$set: {
-				subscription: ''
+				subscription: null
 			}
 		};
 		await users.updateOne(filter, updateDoc);

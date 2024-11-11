@@ -111,7 +111,7 @@
 				<p>Subscribed to push notifications: <b>{isSubscribed}</b></p>
 				{#if isSubscribed}
 					<div>
-						<button class="button" type="button" onclick={unsubscribe}>Unsubscribe</button>
+						<button class="btn" type="button" onclick={unsubscribe}>Unsubscribe</button>
 					</div>
 					<div class="mt-4">
 						<form method="post" action="?/testNotification">

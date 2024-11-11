@@ -29,8 +29,6 @@ export const POST = async ({ request }) => {
 		};
 	});
 
-	console.log('stripe_secret_key: ', STRIPE_SECRET_KEY);
-
 	const session = await stripe.checkout.sessions.create({
 		line_items,
 		metadata: { items: itemsString, customerId },
