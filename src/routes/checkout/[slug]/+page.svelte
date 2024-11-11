@@ -22,7 +22,7 @@
 			})
 			.then((data) => {
 				console.log('data.url: ', data.url);
-				//window.location.replace(data.url);
+				window.location.replace(data.url);
 			});
 	}
 </script>
