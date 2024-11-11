@@ -33,8 +33,8 @@ export const POST = async ({ request }) => {
 		line_items,
 		metadata: { items: itemsString, customerId },
 		mode: 'payment',
-		success_url: 'http://localhost:5173/success',
-		cancel_url: 'http://localhost:5173/cancel'
+		success_url: 'https://sveltestore-gamma.vercel.app/success',
+		cancel_url: 'https://sveltestore-gamma.vercel.app/cancel'
 	});
 
 	return new Response(JSON.stringify({ url: session.url }), {
