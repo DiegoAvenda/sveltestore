@@ -9,8 +9,10 @@ const adminGoogleId = '100935988500638449773';
 const stripe = new Stripe(STRIPE_SECRET_KEY);
 
 export async function POST({ request }) {
+	const rawBody = await request.arrayBuffer();
+
 	const event = await stripe.webhooks.constructEvent(
-		await request.arrayBuffer(),
+		Buffer.from(rawBody),
 		request.headers.get('stripe-signature'),
 		STRIPE_WEBHOOK_SECRET
 	);
