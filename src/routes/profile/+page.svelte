@@ -100,7 +100,7 @@
 			{#if nottifPermGranted === null}
 				<p>Checking permissions...</p>
 			{:else if nottifPermGranted === false}
-				<button class="button" type="button" onclick={requestNotificationPermission}
+				<button class="btn" type="button" onclick={requestNotificationPermission}
 					>Enable notifications</button
 				>
 			{:else}
