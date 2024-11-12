@@ -99,6 +99,9 @@
 		<div class="mt-3">
 			{#if nottifPermGranted === null}
 				<p>Checking permissions...</p>
+				<button class="btn" type="button" onclick={requestNotificationPermission}
+					>Enable notifications</button
+				>
 			{:else if nottifPermGranted === false}
 				<button class="btn" type="button" onclick={requestNotificationPermission}
 					>Enable notifications</button
